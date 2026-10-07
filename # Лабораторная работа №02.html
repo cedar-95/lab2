@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&Lcy;&acy;&bcy;&ocy;&rcy;&acy;&tcy;&ocy;&rcy;&ncy;&acy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;&acy; &numero;2</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="лабораторная-работа-2">Лабораторная работа №2</h1>
+<h2 id="системы-контроля-версий-git-ветки-теги-игнорирование-файлов">Системы контроля версий. Git. Ветки. Теги. Игнорирование файлов</h2>
+<p><strong>Студент:</strong> Чжу Ино<br>
+<strong>Группа:</strong> НПИбд-03-25<br>
+<strong>Студенческий билет:</strong> 1132258331</p>
+<hr>
+<h2 id="цель-работы">Цель работы</h2>
+<p>Изучить продвинутые возможности Git: работу с ветками, создание тегов, игнорирование файлов, просмотр истории.</p>
+<hr>
+<h2 id="среда-выполнения">Среда выполнения</h2>
+<ul>
+<li>ОС: Rocky Linux 10.2</li>
+<li>Оболочка: Bash</li>
+<li>Инструменты: Git, GitHub</li>
+</ul>
+<hr>
+<h2 id="создание-и-работа-с-ветками">Создание и работа с ветками</h2>
+<ul>
+<li>Создание ветки: <code>git branch &lt;имя_ветки&gt;</code></li>
+<li>Переключение на ветку: <code>git checkout -b &lt;имя_ветки&gt;</code></li>
+<li>Слияние веток: <code>git merge &lt;исходная_ветка&gt;</code></li>
+<li>Удаление ветки: <code>git branch -d &lt;имя_ветки&gt;</code></li>
+</ul>
+<hr>
+<h2 id="теги">Теги</h2>
+<ul>
+<li>Создание тега: <code>git tag -a v1.0.0 -m &quot;сообщение&quot;</code></li>
+<li>Удаление тега: <code>git tag -d v1.0.0</code></li>
+<li>Отправка тегов: <code>git push --tags</code></li>
+</ul>
+<hr>
+<h2 id="игнорирование-файлов">Игнорирование файлов</h2>
+<ul>
+<li>Файл <code>.gitignore</code> в корне репозитория</li>
+<li>Примеры шаблонов:
+<ul>
+<li><code>*.log</code></li>
+<li><code>*.tmp</code></li>
+<li><code>.idea/</code></li>
+<li><code>__pycache__/</code></li>
+<li><code>.DS_Store</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="просмотр-истории">Просмотр истории</h2>
+<ul>
+<li><code>git log</code> — полная история</li>
+<li><code>git log --oneline</code> — краткая история</li>
+<li><code>git log --graph</code> — графическое отображение</li>
+<li><code>git log --all</code> — все ветки</li>
+</ul>
+<hr>
+<h2 id="работа-с-удалённым-репозиторием">Работа с удалённым репозиторием</h2>
+<ul>
+<li>Добавление удалённого репозитория: <code>git remote add origin &lt;URL&gt;</code></li>
+<li>Отправка изменений: <code>git push -u origin main</code></li>
+<li>Просмотр удалённых репозиториев: <code>git remote -v</code></li>
+</ul>
+<hr>
+<h2 id="вывод">Вывод</h2>
+<p>В ходе выполнения лабораторной работы №2 были изучены продвинутые возможности Git: создание и слияние веток, удаление веток, создание тегов, игнорирование файлов, просмотр истории коммитов и работа с удалённым репозиторием.</p>
+<hr>
+<h2 id="спасибо-за-внимание">Спасибо за внимание!</h2>
+
+            
+            
+        </body>
+        </html>
